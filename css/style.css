@@ -3,14 +3,24 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .game-board{
-    width: 80%;
+    width: 50%;
     height: 500px;
     border: 1px solid #333;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
+    background-image: url("/images/bg.gif");
+    background-repeat: no-repeat;
+    background-size: 100% 500px;
 }
 
 .pipe{
@@ -27,7 +37,7 @@
 }
 
 .jump{
-    animation: jump 650ms ease-out;
+    animation: jump 1000ms ease-out;
 }
 
 @keyframes pipe-animation {
@@ -46,15 +56,15 @@
     }
 
     40%{
-        bottom: 120px;
+        bottom: 230px;
     }
 
     50%{
-        bottom: 120px;
+        bottom: 230px;
     }
 
     60%{
-        bottom: 120px;
+        bottom: 230px;
     }
 
     100%{
