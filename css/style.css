@@ -18,14 +18,63 @@ body{
     margin: 0 auto;
     position: relative;
     overflow: hidden;
-    background-image: url("/images/bg.gif");
-    background-repeat: no-repeat;
-    background-size: 100% 500px;
 }
 
+.bg_floor{
+    position: absolute; 
+    width: 200%;
+    bottom: 0;
+    z-index: -1;
+    
+}
+
+.floor, .floor_1{    
+    animation: slide 3s linear infinite;
+    position: absolute;
+    width: 50%;
+    background-size: cover;
+    height: 40px;
+}
+
+.floor{
+    bottom: 0;
+    left: 0;
+}
+
+.floor_1{
+    bottom: 0;
+    right: 0;
+}
+
+.bg_sky{
+    position: absolute; 
+    width: 200%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.clouds, .clouds_1{    
+    animation: slide 3s linear infinite;
+    position: absolute;
+    background-size: cover;
+    width: 50%;
+    height: 100%;
+}
+
+.clouds{
+    top: 0;
+    left: 0;
+}
+
+.clouds_1{
+    top: 0;
+    right: 1px;
+}
 .pipe{
     position: absolute;
-    bottom: 0;
+    bottom: 40px;
     width: 80px;
     animation: pipe-animation 2.5s infinite linear;
 }
@@ -33,11 +82,11 @@ body{
 .mario{
     width: 130px;
     position: absolute;
-    bottom: 0px;
+    bottom: 40px;
 }
 
 .jump{
-    animation: jump 1000ms ease-out;
+    animation: jump 750ms ease-out;
 }
 
 @keyframes pipe-animation {
@@ -52,23 +101,32 @@ body{
 @keyframes jump {
 
     0%{
-        bottom: 0;
+        bottom: 40px;
     }
 
     40%{
-        bottom: 230px;
+        bottom: 180px;
     }
 
     50%{
-        bottom: 230px;
+        bottom: 180px;
     }
 
     60%{
-        bottom: 230px;
+        bottom: 180px;
     }
 
     100%{
-        bottom: 0;
+        bottom: 40px;
     }
     
+}
+
+@keyframes slide {
+    0% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(-100%); 
+    }
 }
