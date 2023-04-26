@@ -8,6 +8,7 @@ const floor = document.querySelector('.floor' )
 const floor_2 = document.querySelector('.floor_1')
 
 var gameover = false
+var initialPositionSky = 0;
 
 const jump = () => {
     mario.classList.add('jump');
@@ -35,23 +36,26 @@ const loop = setInterval(() =>{
     const floorPositionList_2 = floor_2.getClientRects();
     const floorPosition_2 = floorPositionList_2 [0].left;
 
-    
+    if (initialPositionSky === 0) {
+        initialPositionSky = skyPositionList[0].left;
+    }
+   
     if (pipePosition <= 100 && pipePosition >= 0 && marioPosition < 80) {
         
         pipe.style.animation = 'none';
         pipe.style.left= `${pipePosition}px`;
 
         sky.style.animation = 'none';
-        sky.style.left= `${skyPosition- 481}px`;
+        sky.style.left= `${skyPosition - initialPositionSky}px`;
       
         sky_2.style.animation = 'none';
-        sky_2.style.left= `${skyPosition_2 - 481}px`;
+        sky_2.style.left= `${skyPosition_2 - initialPositionSky}px`;
 
         floor.style.animation = 'none';
-        floor.style.left= `${floorPosition- 481}px`;
+        floor.style.left= `${floorPosition - initialPositionSky}px`;
       
         floor_2.style.animation = 'none';
-        floor_2.style.left= `${floorPosition_2 - 481}px`;
+        floor_2.style.left= `${floorPosition_2 - initialPositionSky}px`;
 
 
         mario.style.animation = 'none';

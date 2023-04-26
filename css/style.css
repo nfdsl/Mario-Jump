@@ -12,7 +12,7 @@ body{
     flex-direction: column;
 }
 .game-board{
-    width: 50%;
+    width: 850px;
     height: 500px;
     border: 1px solid #333;
     margin: 0 auto;
