@@ -6,6 +6,11 @@ const sky = document.querySelector('.clouds')
 const sky_2 = document.querySelector('.clouds_1')
 const floor = document.querySelector('.floor' )
 const floor_2 = document.querySelector('.floor_1')
+const restart = document.querySelector('.game-over__restart')
+const btnMenu = document.querySelector('.game-over__menu')
+const btnStart = document.querySelector('.main-menu__start')
+const btnRestart = document.querySelector('.game-over_btn')
+
 
 var gameover = false
 var initialPositionSky = 0;
@@ -65,8 +70,17 @@ const loop = setInterval(() =>{
         mario.style.marginLeft = '30px';
 
         clearInterval(loop);
+        gameover = true;
     }    
 
+    if (gameover === true){
+
+
+    }
+    
+    btnRestart.addEventListener("click", (event) => {
+      window.location.reload();
+    });
 },10)
 
 let intervalScore = null
