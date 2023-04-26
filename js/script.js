@@ -3,9 +3,9 @@ const pipe = document.querySelector('.pipe');
 const score = document.querySelector('.score')
 const bestScore = document.querySelector('.best__score')
 const sky = document.querySelector('.clouds')
-const sky_1 = document.querySelector('.clouds_1')
+const sky_2 = document.querySelector('.clouds_1')
 const floor = document.querySelector('.floor' )
-const floor_1 = document.querySelector('.floor_1')
+const floor_2 = document.querySelector('.floor_1')
 
 var gameover = false
 
@@ -20,28 +20,48 @@ const jump = () => {
 }
 
 const loop = setInterval(() =>{
-    const skyPosition = sky.getBoundingClientRect().left;
-    const sky_1Position = sky_1.getBoundingClientRect().left;
     const pipePosition =  pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px','');
+  
+    const skyPositionList = sky.getClientRects();
+    const skyPosition = skyPositionList[0].left;
+    
+    const skyPositionList_2 = sky_2.getClientRects();
+    const skyPosition_2 = skyPositionList_2 [0].left;
+    
+    const floorPositionList = floor.getClientRects();
+    const floorPosition = floorPositionList[0].left;
+    
+    const floorPositionList_2 = floor_2.getClientRects();
+    const floorPosition_2 = floorPositionList_2 [0].left;
+
+    
     if (pipePosition <= 100 && pipePosition >= 0 && marioPosition < 80) {
+        
         pipe.style.animation = 'none';
         pipe.style.left= `${pipePosition}px`;
 
-   
-
-        sky.style.transform= `translate(${skyPosition})`;
         sky.style.animation = 'none';
-       
+        sky.style.left= `${skyPosition- 481}px`;
+      
+        sky_2.style.animation = 'none';
+        sky_2.style.left= `${skyPosition_2 - 481}px`;
+
+        floor.style.animation = 'none';
+        floor.style.left= `${floorPosition- 481}px`;
+      
+        floor_2.style.animation = 'none';
+        floor_2.style.left= `${floorPosition_2 - 481}px`;
 
 
-        sky_1.style.transform= `translate(${sky_1Position})`;
-        sky_1.style.animation = 'none';
-        
+        mario.style.animation = 'none';
+        mario.style.bottom= `${marioPosition}px`;
+        mario.src = './images/dead_mario.png';
+        mario.style.width = '80px';
+        mario.style.marginLeft = '30px';
 
-        console.log(skyPosition,sky_1Position)
-        
-    }
+        clearInterval(loop);
+    }    
 
 },10)
 
