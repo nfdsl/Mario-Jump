@@ -13,8 +13,11 @@
 </head>
 <body>
 
-    <div class="game-board">
-       
+    <div id= "game_screen"class="game-board" style="display: none;">
+        <div class="score-box">
+            <div class="score">0</div>
+            <div class="best__score">0</div>
+        </div>
         <img src="./images/mario.gif" class="mario">
         <img src="./images/pipe.png" class="pipe">
         <div class="bg_sky">
@@ -26,13 +29,8 @@
             <img src="./images/floor_bg.png" class="floor_1">
         </div>
     </div>
-
-    <div class="score-box">
-        <div class="score">0</div>
-        <div class="best__score">0</div>
-    </div>
-    <div class="start_game">
-        <button class="button button--menu main-menu__start">Jogar</button>
+    <div  id= "start_screen"class="start_game" style="display: block;">
+        <button class="button button--menu main-menu__start" onclick="start_game()">Jogar</button>
     </div>
     <div class="game-over">
         <h2 class="game-over__title">Game Over</h2>

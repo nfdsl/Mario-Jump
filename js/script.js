@@ -15,17 +15,10 @@ const btnRestart = document.querySelector('.game-over_btn')
 var gameover = false
 var initialPositionSky = 0;
 
-const jump = () => {
-    mario.classList.add('jump');
-
-    setTimeout(() =>{
-
-        mario.classList.remove('jump');
-
-    }, 750);
-}
-
-const loop = setInterval(() =>{
+function start_game(){
+  this.toggle_screen('start_screen', false)
+  this.toggle_screen('game_screen', true)
+  const loop = setInterval(() =>{
     const pipePosition =  pipe.offsetLeft;
     const marioPosition = +window.getComputedStyle(mario).bottom.replace('px','');
   
@@ -82,6 +75,25 @@ const loop = setInterval(() =>{
       window.location.reload();
     });
 },10)
+}
+
+function toggle_screen(id, toggle){
+    let start = document.getElementById(id);
+    let display = (toggle) ? 'block' : 'none';
+    start.style.display = display;
+}
+
+const jump = () => {
+    mario.classList.add('jump');
+
+    setTimeout(() =>{
+
+        mario.classList.remove('jump');
+
+    }, 750);
+}
+
+
 
 let intervalScore = null
 var playerScore = 0
