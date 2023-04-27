@@ -1,3 +1,8 @@
+@font-face {
+    font-family: MarioFont;
+    src: url(SuperMario256.ttf);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -130,3 +135,102 @@ body{
       transform: translate(-100%); 
     }
 }
+
+@keyframes fadeInDownBig {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -200px, 0);
+      transform: translate3d(0, -200px, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+}
+.start_game{
+    animation: fadeInDownBig 2.5s;
+}
+.start_screen{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.start_text{
+    font-family: MarioFont;
+    position: relative;
+    font-size: 80px;
+    color: #000;
+    text-shadow: 6px 6px 6px #000;
+    margin-bottom: 20px;
+   
+}
+
+.red{
+    color:#FF0000
+}
+.blue{
+    color:#001aff
+}
+.yellow{
+    color:#ffee00
+}
+.green{
+    color:#00ff00
+}
+
+.btn_start{
+    font-family: MarioFont;
+}
+
+/* CSS */
+.btn_start {
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding: 17px 16px 13px;
+  text-align: center;
+  transform: translateZ(0);
+  transition: filter .2s;
+  width: 200px;
+  
+}
+
+.btn_start:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.btn_start:main,
+.btn_start:focus {
+  user-select: auto;
+}
+
+.btn_start:hover:not(:disabled) {
+  filter: brightness(1.1);
+  -webkit-filter: brightness(1.1);
+}
+
+.btn_start:disabled {
+  cursor: auto;
+}
+

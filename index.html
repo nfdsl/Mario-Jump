@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <div id= "game_screen"class="game-board" style="display: none;">
+    <div id= "game_screen" class="game-board" style="display: none;">
         <div class="score-box">
             <div class="score">0</div>
             <div class="best__score">0</div>
@@ -29,14 +29,25 @@
             <img src="./images/floor_bg.png" class="floor_1">
         </div>
     </div>
-    <div  id= "start_screen"class="start_game" style="display: block;">
-        <button class="button button--menu main-menu__start" onclick="start_game()">Jogar</button>
+    <div id = "start_screen" class="start_screen start_game">
+        <p>
+            <span class = "start_text red">S</span>
+            <span class = "start_text blue">T</span>
+            <span class = "start_text yellow">A</span>
+            <span class = "start_text blue">R</span>
+            <span class = "start_text green">T</span>
+            <span class = "start_text blue">G</span>
+            <span class = "start_text green">A</span>
+            <span class = "start_text yellow">M</span>
+            <span class = "start_text red">E</span>
+        </p>
+        <button class="btn_start" onclick="start_game()">JOGAR</button>
     </div>
-    <div class="game-over">
+    <!-- <div class="btn">
         <h2 class="game-over__title">Game Over</h2>
         <button class="button game-over__restart game-over__btn">
           Restart
         </button>
-    </div>
+    </div> -->
 </body>
 </html>

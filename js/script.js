@@ -14,6 +14,10 @@ const btnRestart = document.querySelector('.game-over_btn')
 
 var gameover = false
 var initialPositionSky = 0;
+let intervalScore = null
+var playerScore = 0
+let bestPoints = 0
+let velocityEnemy = 2
 
 function start_game(){
   this.toggle_screen('start_screen', false)
@@ -70,35 +74,7 @@ function start_game(){
 
 
     }
-    
-    btnRestart.addEventListener("click", (event) => {
-      window.location.reload();
-    });
 },10)
-}
-
-function toggle_screen(id, toggle){
-    let start = document.getElementById(id);
-    let display = (toggle) ? 'block' : 'none';
-    start.style.display = display;
-}
-
-const jump = () => {
-    mario.classList.add('jump');
-
-    setTimeout(() =>{
-
-        mario.classList.remove('jump');
-
-    }, 750);
-}
-
-
-
-let intervalScore = null
-var playerScore = 0
-let bestPoints = 0
-let velocityEnemy = 2
 
 const scoreCounter = () => {
   if (!gameover) {
@@ -120,6 +96,25 @@ const scoreCounter = () => {
 }
 
 intervalScore = setInterval(scoreCounter, 100)
+
+}
+
+function toggle_screen(id, toggle){
+    let start = document.getElementById(id);
+    let display = (toggle) ? 'flex' : 'none';
+    start.style.display = display;
+}
+
+const jump = () => {
+    mario.classList.add('jump');
+
+    setTimeout(() =>{
+
+        mario.classList.remove('jump');
+
+    }, 750);
+}
+
 
 
 document.addEventListener('keyup',jump);
