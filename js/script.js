@@ -71,8 +71,7 @@ function start_game(){
     }    
 
     if (gameover === true){
-
-
+      this.gameover_screen('gameover_screen', true)
     }
 },10)
 
@@ -103,6 +102,16 @@ function toggle_screen(id, toggle){
     let start = document.getElementById(id);
     let display = (toggle) ? 'flex' : 'none';
     start.style.display = display;
+}
+
+function gameover_screen(id, toggle){
+  let start = document.getElementById(id);
+  let display = (toggle) ? 'flex' : 'none';
+  start.style.display = display;
+}
+
+function restart_game(){
+  window.location.reload()
 }
 
 const jump = () => {
